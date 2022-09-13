@@ -1,0 +1,30 @@
+<h3>Applicant Details</h3>
+
+<table id ="jobdescription">
+    <tr>
+         <th>ApplicantId</th>  
+         <th>Applicant First Name</th>
+         <th>Applicant Last Name</th>
+         <th>DocumentId</th>
+         <th>JobId</th>
+         <th>Highest Qualification</th> 
+          <th>Technical skill 1</th>
+        <th>Technical skill 2</th>
+        <th>Technical skill 3</th>
+        <th>status</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let jd of applicantDetails">
+         <td>{{jd.applicantId}}</td>
+         <td>{{jd.applicantFirstName}}</td>
+         <td>{{jd.applicantLastName}}</td>
+         <td>{{jd.documentsDetails.docId}}</td>
+         <td>{{jd.jobDescription.jobId}}</td>
+         <td>{{jd.highestQualification}}</td>
+         <td>{{jd.technicalskills1}}</td>
+        <td>{{jd.technicalskills2}}</td>
+        <td>{{jd.technicalskills3}}</td>
+        <td>{{jd.status}}</td>
+        <td><button id="b1" (click)="scheduleInterview(interview)">Schedule Interview</button></td>
+    </tr> 
+</table>

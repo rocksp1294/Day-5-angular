@@ -1,0 +1,66 @@
+
+<br>
+<br>
+<table id="jobdescription" [hidden]="submitted">
+    <tr>
+        <th>jobId</th>
+        <th>Technical skill 1</th>
+        <th>Technical skill 2</th>
+        <th>Technical skill 3</th>
+        <th>Vaccancies</th>
+        <th></th>
+      
+    </tr>
+    <tr *ngFor="let career of jobdescriptionCareer">
+        <td>{{career.jobId}}</td>
+        <td>{{career.technicalSkills1}}</td>
+        <td>{{career.technicalSkills2}}</td>
+        <td>{{career.technicalSkills3}}</td>
+        <td>{{career.requiredCandidates}}</td>
+        <button type="submit" id="apply" (click)="showForm(career.jobId)">Apply</button>
+    </tr>
+
+</table>
+<br>
+<br>
+<form class="jobrequest" (submit)="candiadateApplication(applicantDetails)" [hidden]="!submitted">
+    <label>Applicant First Name</label>
+    <input type="text" name="applicantFirstName" [(ngModel)]="applicantDetails.applicantFirstName">
+    <br><br>
+    <label>Applicant Last Name</label>
+    <input type="text" name="applicantLastName" [(ngModel)]="applicantDetails.applicantLastName">
+    <br><br>
+    
+    <label> document Id</label>
+    <input type="text" name="docId" [(ngModel)]="applicantDetails.documentsDetails.docId">
+    <br><br>
+
+    <label> Job Id</label>
+    <input type="text" name="jobId" [(ngModel)]="applicantDetails.jobDescription.jobId">
+    <br><br>
+    <label>Highest Qualification</label>
+    <input type="text" name="highestQualification" [(ngModel)]="applicantDetails.highestQualification">
+    <br><br>
+    <label>Technical Skills 1</label>
+    <input type="text" name="technicalskills1" [(ngModel)]="applicantDetails.technicalskills1">
+    <br><br>
+    <label>Technical Skills 2</label>
+    <input type="text" name="technicalskills2" [(ngModel)]="applicantDetails.technicalskills2">
+    <br><br>
+    <label>Technical Skills 3</label>
+    <input type="text" name="technicalskills3" [(ngModel)]="applicantDetails.technicalskills3">
+    <br><br>
+    <label>Gender</label>
+    <input type="text" name="gender" [(ngModel)]="applicantDetails.gender">
+    <br><br>
+    <label>Contact No</label>
+    <input type="text" name="contactNo" [(ngModel)]="applicantDetails.contactNo">
+    <br><br>
+    <label>DateOfBirth</label>
+    <input type="date" name="dateOfBirth" [(ngModel)]="applicantDetails.dateOfBirth">
+    <br><br>
+    <label>passout</label>
+    <input type="date" name="passout" [(ngModel)]="applicantDetails.passout">
+    <br><br>
+    <button type="submit" id="applybutton">Apply</button>
+</form>
